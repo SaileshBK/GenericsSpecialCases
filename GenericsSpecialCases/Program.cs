@@ -18,7 +18,24 @@ namespace GenericsSpecialCases
 
             container.PrintItem("This is a message from generic method in generic class.");
 
+            var result = Add(2, 5);
+            Console.WriteLine($"2 + 5 is equals to {result}");
+
+            var result2 = Add(2.5, 5.5);
+            Console.WriteLine($"2.5 + 5.5 is equals to {result2}");
+
+
+
+
             Console.ReadLine();
+        }
+
+        // in case of nullable reference type -> where T : notnull
+        private static T Add<T>(T x, T y) where T : notnull
+        {
+            dynamic a = x;
+            dynamic b = y;
+            return a + b;
         }
     }
     class ContainerBase
