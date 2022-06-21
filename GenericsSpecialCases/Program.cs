@@ -9,12 +9,14 @@ namespace GenericsSpecialCases
             // we have here 2 instances of container of string, 1 instances of container of int and 3 instance of containerBase.
             _ = new Container<string>();
             _ = new Container<string>();
-            _ = new Container<int>();
+            var container = new Container<int>();
 
             Console.WriteLine($"Container<string>: {Container<string>.InstanceCount}");
             Console.WriteLine($"Container<int>: {Container<int>.InstanceCount}");
             Console.WriteLine($"Container<bool>: {Container<bool>.InstanceCount}");
             Console.WriteLine($"ContainerBase: {ContainerBase.InstanceCountBase}");
+
+            container.PrintItem("This is a message from generic method in generic class.");
 
             Console.ReadLine();
         }
@@ -33,5 +35,11 @@ namespace GenericsSpecialCases
         
 
         public static int InstanceCount { get; private set; }
+
+        //parameter type TItem uses Generic type parameter of generic method.
+        public void PrintItem<TItem>(TItem item)
+        {
+            Console.WriteLine($"item: {item}");
+        }
     }
 }
