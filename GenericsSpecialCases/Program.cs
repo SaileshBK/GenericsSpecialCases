@@ -30,12 +30,19 @@ namespace GenericsSpecialCases
             Console.ReadLine();
         }
 
-        // in case of nullable reference type -> where T : notnull
-        private static T Add<T>(T x, T y) where T : notnull
+        
+        private static int Add( int x,  int y) 
         {
-            dynamic a = x;
-            dynamic b = y;
-            return a + b;
+            
+            return x + y;
+        }
+
+        //Insted of creating a Generic method. Using copy and paste approach to create a method overload 
+        // creating overload of Add method to add two doubles.
+        private static double Add(double x, double y)
+        {
+
+            return x + y;
         }
     }
     class ContainerBase
