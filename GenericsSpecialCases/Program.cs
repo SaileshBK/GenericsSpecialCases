@@ -2,7 +2,7 @@
 
 namespace GenericsSpecialCases
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -35,8 +35,9 @@ namespace GenericsSpecialCases
         
 
         public static int InstanceCount { get; private set; }
-
-        //parameter type TItem uses Generic type parameter of generic method.
+        // Defining a generic method in generic class is possile
+        // Parameter type TItem uses Generic type parameter of generic method.
+        // Make sure the type parameter is different name than type parameter that is defined in the class.
         public void PrintItem<TItem>(TItem item)
         {
             Console.WriteLine($"item: {item}");
