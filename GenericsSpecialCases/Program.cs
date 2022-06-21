@@ -11,6 +11,7 @@ namespace GenericsSpecialCases
             _ = new Container<string>();
             var container = new Container<int>();
 
+            // from this we know that Container<string> does not have same static member as Container<int>.
             Console.WriteLine($"Container<string>: {Container<string>.InstanceCount}");
             Console.WriteLine($"Container<int>: {Container<int>.InstanceCount}");
             Console.WriteLine($"Container<bool>: {Container<bool>.InstanceCount}");
